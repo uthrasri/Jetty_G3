@@ -734,10 +734,10 @@ public class SslConnection extends AbstractConnection implements Connection.Upgr
                                         BufferUtil.clear(_encryptedInput);
                                         throw new SSLHandshakeException("Encrypted buffer max length exceeded");
                                     }
-    
+
                                     if (netFilled > 0)
                                         continue; // try filling some more
-                                    
+
                                     _underflown = true;
                                     if (netFilled < 0 && _sslEngine.getUseClientMode())
                                     {
